@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <style>
+        * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+    color: #f2f2f2;
+                font-size: 40px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 420px;
+                width: 100%;
+                text-align: left;
+                padding-left: 58px;
+              
+            
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+
+
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+ 
+
+.carousel {
+  background:white;
+  max-width: 1000px;
+}
+
+.carousel-cell {
+  width: 28%;
+  height: 280px;
+  margin-right: 10px;
+  border-radius: 5px;
+  /* background-color: yellow; */
+  /* counter-increment: carousel-cell; */
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  /* content: counter(carousel-cell); */
+  line-height: 400px;
+  /* font-size: 2px; */
+  color: white;
+}
+.but{
+     height: 100px;
+     flex-direction: column;
+     margin-bottom: 50px;
+     margin-top: 20px;
+     background-color: rgb(228, 206, 206);
+     width: 100%;
+    justify-content: center;
+}
+    </style>
+    <title>Document</title>
+</head>
+<body onload="show()">
+
+  
+    <div class="grid grid-cols-3 gap-10 mt-10 mb-10 w-full" style="max-width: 1000px;">
+    <div > <img src="./images/logo.svg" alt="1" style="width: 150px;"></div>
+    <div class="  ml-20 "><button class="w-60  bg-gray-50  border border-black p-2 " ><i class="fa fa-search" aria-hidden="true"></i><input placeholder="search" type="text" class="bg-gray-50  pl-4"></input> </button></div>
+    <div style="margin-left: auto;">
+        <button class=" text-yellow-500" ><i class="fa fa-bell" aria-hidden="true"></i></button>
+        <button class="ml-8"><i class="fa fa-user" area-hidden="true"></i></button>
+    </div>
+
+
+
+    </div>
+       <hr class="m-2 mt-10 mb-4" style="max-width: 1000px;">
+    <div class="but">
+        <button class="bg-white text-black border border-black p-2 w-52 rounded-xl hover:bg-gray-200 "><i class="fa fa-trophy" area-hidden="true"></i>Competations</button>
+        <button class="bg-white text-black border border-black p-2 ml-6 w-52 rounded-xl hover:bg-gray-200 "><i class="fa fa-puzzle-piece" area-hidden="true"></i>Quizes</button>
+        <button class="bg-white text-black border border-black p-2 ml-6 w-52 rounded-xl hover:bg-gray-200 "><i class="fa fa-handshake-o" area-hidden="true"></i>Opporunity</button>
+        <button class="bg-white text-black border border-black p-2 ml-6 w-52 rounded-xl hover:bg-gray-200 "><i class="fa fa-television" area-hidden="true"></i>Workshop</button>
+    </div>
+    
+
+
+    <!-- Slideshow container -->
+<div class="slideshow-container">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="./images/slide1.jpg" style="width:100%; filter : grayscale(80%);">
+      <div class="text">Historical Structure</div>
+                    <div class="bottom-96 text-white absolute pl-16 text-2xl font-bold " >Category:Anclart Architecture</div>
+                    <div class="bottom-72 text-white absolute pl-16 text-2xl font-bold " >Quiz ate-:31st  Decembar 2020 | 6pm to 8pm IST</div>
+                <div class="grid grid-cols-2 gap-4  bottom-14 absolute w-11/12 h-40 ml-10 mt-20">
+                    <div><div class=" text-white  text-2xl  col-start-1 col-span-8 ml-4 font-bold" >
+                        <p>Structured Registration Ends in</p>
+                        <div class="grid grid-cols-3 gap-2 text-center">
+                            <div class=" p-2 "><b>18</b></div>
+                            <div class=" p-2"><b>09</b></div>
+                            <div class=" p-2"><b>54</b></div>
+                            <div >Days</div>
+                            <div >Hours</div>
+                            <div >Mins</div>
+
+                        </div>
+                    </div></div>
+
+                    <div class=" text-white text-xl col-end-7 col-span-3 mt-10" >
+                        PRIZE MONEY <b>USD 999</b><br>
+                        <div class="grid grid-cols-3 w-64 mt-6 ">
+                        <div  class="w-12 text-green-400 ml-4 italic text-3xl "> <p>FREE</p></div>
+                        <div  class=" bg-white text-black col-span-2 rounded-lg text-center pl-2 pr-2"><button>Entroll Now</button></div>   </div>
+
+
+                    </div>
+
+                 </div>
+      <!-- <div class="text">Caption Text</div> -->
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="./images/slide5.jfif" style="width:100%">
+      <div class="text">Historical Structure</div>
+      <div class="bottom-96 text-white absolute pl-16 text-2xl font-bold " >Category:Anclart Architecture</div>
+      <div class="bottom-72 text-white absolute pl-16 text-2xl font-bold " >Quiz ate-:31st  Decembar 2020 | 6pm to 8pm IST</div>
+  <div class="grid grid-cols-2 gap-4  bottom-14 absolute w-11/12 h-40 ml-10 mt-20">
+      <div><div class=" text-white  text-2xl  col-start-1 col-span-8 ml-4 font-bold" >
+          <p>Structured Registration Ends in</p>
+          <div class="grid grid-cols-3 gap-2 text-center">
+              <div class=" p-2 "><b>18</b></div>
+              <div class=" p-2"><b>09</b></div>
+              <div class=" p-2"><b>54</b></div>
+              <div class="">Days</div>
+              <div class="">Hours</div>
+              <div class="">Mins</div>
+
+          </div>
+      </div></div>
+
+      <div class=" text-white text-xl col-end-7 col-span-3 mt-10" >
+          PRIZE MONEY <b>USD 999</b><br>
+          <div class="grid grid-cols-3 w-64 mt-6 ">
+          <div  class="w-12 text-green-400 ml-4 italic text-3xl "> <p>FREE</p></div>
+          <div  class=" bg-white text-black col-span-2 rounded-lg text-center pl-2 pr-2"><button>Entroll Now</button></div>   </div>
+
+
+      </div>
+
+   </div>
+      <!-- <div class="text">Caption Two</div> -->
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="./images/slide1.jpg" style="width:100%; filter : grayscale(80%);">
+      <div class="text">Historical Structure</div>
+                    <div class="bottom-96 text-white absolute pl-16 text-2xl font-bold " >Category:Anclart Architecture</div>
+                    <div class="bottom-72 text-white absolute pl-16 text-2xl font-bold " >Quiz ate-:31st  Decembar 2020 | 6pm to 8pm IST</div>
+                <div class="grid grid-cols-2 gap-4  bottom-14 absolute w-11/12 h-40 ml-10 mt-20">
+                    <div><div class=" text-white  text-2xl  col-start-1 col-span-8 ml-4 font-bold" >
+                        <p>Structured Registration Ends in</p>
+                        <div class="grid grid-cols-3 gap-2 text-center">
+                            <div class=" p-2 "><b>18</b></div>
+                            <div class=" p-2"><b>09</b></div>
+                            <div class=" p-2"><b>54</b></div>
+                            <div class="">Days</div>
+                            <div class="">Hours</div>
+                            <div class="">Mins</div>
+
+                        </div>
+                    </div></div>
+
+                    <div class=" text-white text-xl col-end-7 col-span-3 mt-10" >
+                        PRIZE MONEY <b>USD 999</b><br>
+                        <div class="grid grid-cols-3 w-64 mt-6 ">
+                        <div  class="w-12 text-green-400 ml-4 italic text-3xl "> <p>FREE</p></div>
+                        <div  class=" bg-white text-black col-span-2 rounded-lg text-center pl-2 pr-2"><button>Entroll Now</button></div>   </div>
+
+
+                    </div>
+
+                 </div>
+      <!-- <div class="text">Caption Three</div> -->
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  <!-- 1st slide script -->
+  <script>
+      var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+  </script>
+  <div class="flex text-xl p-4" style="max-width: 1000px;">
+  <P class="ml-20 border-l-2 border-grey-200 pt-2 pb-2 pl-4  rounded-lg">Filters</P>
+  <P class="ml-20 border-r-2 border-grey-200 pt-2 pb-2 pr-4 rounded-lg" >Categiry</P>
+  <P  class="ml-20 border-l-2 border-grey-200 pt-2 pb-2 pl-4 rounded-lg">Filter</P>
+  <P  class="ml-20 border-r-2 border-grey-200 pt-2 pb-2 pr-4 rounded-lg">Categiry</P>
+  <P  class="ml-20 border-l-2 border-grey-200 pt-2 pb-2 pl-4 rounded-lg">Filter</P>
+  <P class="ml-20 border-r-2 border-grey-200 pt-2 pb-2 pr-4 rounded-lg">Categiry</P>
+</div>
+<hr class="ml-6 mr-6 mt-4">
+   <div class="pl-10 pt-6">
+     <p class="text-4xl">Quizzes by Archdals</p>
+     <p class="text-xl pt-2">Participate in competitions win Amazing prizes</p>
+    
+   </div>
+    
+ 
+<p class="pl-10 text-2xl pt-20">Live Quizes</p>
+<!-- Flickity HTML init -->
+<div class="carousel"
+  data-flickity='{ "contain": true }' >
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+        <h5 class="card-title text-center">
+        <p class="card-text">
+            <div class="grid grid-cols-3 ">
+            <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                <p>Java</p> </div>
+                <div class="border-l  text-center p-2" ><p class="text-2xl">04</p></div> 
+             </div>
+            </p></h5>
+        <button class=" border border-black pl-10 pr-10 bg-blue-100" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide2.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-2xl">04</p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 bg-blue-100" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-2xl">04</p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 bg-blue-100 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide2.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-2xl">04</p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 bg-blue-100" style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-2xl">04</p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border-2 border-black pl-10 pr-10 bg-blue-100 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+</div>
+
+<p class="pl-10 text-2xl pt-20">Live Quizes</p>
+<hr>
+<!-- Flickity HTML init -->
+<div class="carousel"
+  data-flickity='{ "contain": true }' >
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+        <h5 class="card-title text-center">
+        <p class="card-text">
+            <div class="grid grid-cols-3 ">
+            <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                <p>Java</p> </div>
+                <div class="border-l  text-center p-2" ><p class="text-4xl"><i class="fa fa-trophy " aria-hidden="true"></i></p></div> 
+             </div>
+            </p></h5>
+        <button class=" border border-black pl-10 pr-10 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide2.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-4xl"><i class="fa fa-trophy" aria-hidden="true"></i></p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-4xl"><i class="fa fa-trophy" aria-hidden="true"></i></p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide2.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-4xl"><i class="fa fa-trophy" aria-hidden="true"></i></p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border border-black pl-10 pr-10 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+  <div class="carousel-cell">
+    <div class="card m-8 border border-black   " style="width: 15rem; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; border-top-left-radius: 25px; border-top-right-radius: 25px;" id="s1">
+        <img class="card-img-top" src="./images/slide3.jfif" alt="Card image cap" style="border-top-left-radius: 25px; border-top-right-radius: 25px; filter : grayscale(80%);">
+        <div class="card-body">
+            <h5 class="card-title text-center">
+                <p class="card-text">
+                    <div class="grid grid-cols-3 ">
+                    <div class=" col-span-2 text-center"> <p >Historical Structure</p>
+                        <p>Java</p> </div>
+                        <div class="border-l  text-center p-2" ><p class="text-4xl"><i class="fa fa-trophy" aria-hidden="true"></i></p></div> 
+                     </div>
+                    </p></h5>
+        <button class=" border-2 border-black pl-10 pr-10 " style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; width:100%; padding-left: 30px;">Entroll Now</button>
+        
+        </div>
+     </div>
+  </div>
+</div>
+<br><br>
+<hr>
+
+
+</body>
+</html>
