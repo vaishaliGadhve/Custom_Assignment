@@ -99,6 +99,31 @@
           from {opacity: .4}
           to {opacity: 1}
         }
+        #bu1{
+            width: 90%;
+            height: 50px;
+            background-color:white;
+           
+        }
+        #bu2{
+            width: 90%;
+            height: 50px;
+            background-color:white;
+            display: none;
+        }
+        #bu3{
+            width: 90%;
+            height: 50px;
+            background-color:white;
+            display: none;
+        }
+        #bu4{
+            width: 90%;
+            height: 50px;
+            background-color:white;
+            display: none;
+            
+        }
     </style>
     <title>RACKNET Template</title>
 </head>
@@ -772,20 +797,43 @@
                         <p  class=" p-sm mb-sm  mt-xl  font-bold" style="font-size: 40px;" >Frequently Asked Questions</p>
                         </div>
                     <div class="flex flex-col items-center  mb-md text-md   " style="font-size: 17px; width: 100%;">
-                        <div style="background-color: white; width:60%; padding: 13px;" class="p-sm m-sm ">
-                            <p class="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button class="float float-right"><i class="fa fa-plus   float float-right " aria-hidden="true" style="color: red;"></i></button> </p>
-                            <p  style="color: gray; font-size: 13px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy <br> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
-                            make </p> </div>
-                        <div style="background-color: white; width:60%  " class="p-sm m-sm font-semibold">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. ? <button class="float float-right"><i class="fa fa-plus   float float-right " aria-hidden="true" style="color: red;"></i></button>
-                        </div>
-                        <div style="background-color: white; width: 60%" class="p-sm m-sm font-semibold">
-                            Lorem Ipsum is simply dummy text of the printing? <button class="float float-right"><i class="fa fa-plus   float float-right " aria-hidden="true" style="color: red;"></i></button>
-                        </div>
-                        <div style="background-color: white; width: 60%" class="p-sm m-sm font-semibold">
-                            Lorem Ipsum is simply dummy? <button class="float float-right"><i class="fa fa-plus   float float-right " aria-hidden="true" style="color: red;"></i></button>
-                        </div>
+                        <div style="width: 60%; background-color: white; padding: 10px;">
+                            <input type="button" value="+"  id="btn1" style="color: red; background-color: white; border: 0px;float: right; cursor: pointer; font-weight:900;font-size:x-large; ">
+                            <p class="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                           <div id="bu1">
+                                <p  style="color: gray; font-size: 13px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                    standard dummy <br> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+                                    make </p>
+                            </div>
+                           </div>
+
+                            <div style="width: 60%; background-color: white; padding: 10px; margin-top: 20px; ">
+                                <input type="button" value="+" id="btn2" style="color: red; background-color: white; border: 0px;float: right; cursor: pointer; font-weight:900;font-size:x-large;  ">
+                                <p class="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                               <div id="bu2">
+                                    <p  style="color: gray; font-size: 13px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                        standard dummy <br> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+                                        make </p>
+                                </div>
+                               </div>
+                               <div style="width: 60%; background-color: white; padding: 10px; margin-top: 20px; ">
+                                <input type="button" value="+" id="btn3" style="color: red; background-color: white; border: 0px;float: right; cursor: pointer; font-weight:900;font-size:x-large; ">
+                                <p class="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                               <div id="bu3">
+                                    <p  style="color: gray; font-size: 13px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                        standard dummy <br> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+                                        make </p>
+                                </div>
+                               </div>
+                               <div style="width: 60%; background-color: white; padding: 10px; margin-top: 20px;">
+                                <input type="button" value="+" id="btn4" style="color: red; background-color: white; border: 0px;float: right; cursor: pointer; font-weight:900;font-size:x-large; ">
+                                <p class="font-semibold">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                               <div id="bu4">
+                                    <p  style="color: gray; font-size: 13px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                                        standard dummy <br> text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to 
+                                        make </p>
+                                </div>
+                               </div>
                        
                     </div>
                     <div class=" flex flex-row justify-center  " style="height: 180px; width: 100%; background-color: white; align-items: center;">
@@ -826,5 +874,59 @@
  
 </div>
     <br><br>
+    <script>
+        document.getElementById("btn1").addEventListener("click",function()
+        {
+            var box1=document.getElementById("bu1");
+            if(box1.style.display=="none")
+            {
+                box1.style.display="block";
+    
+            }
+            else
+            {
+                box1.style.display="none";
+            }
+        })
+        document.getElementById("btn2").addEventListener("click",function()
+        {
+            var box1=document.getElementById("bu2");
+            if(box1.style.display=="none")
+            {
+                box1.style.display="block";
+    
+            }
+            else
+            {
+                box1.style.display="none";
+            }
+        })
+        document.getElementById("btn3").addEventListener("click",function()
+        {
+            var box1=document.getElementById("bu3");
+            if(box1.style.display=="none")
+            {
+                box1.style.display="block";
+    
+            }
+            else
+            {
+                box1.style.display="none";
+            }
+        })
+        document.getElementById("btn4").addEventListener("click",function()
+        {
+            var box1=document.getElementById("bu4");
+            if(box1.style.display=="none")
+            {
+                box1.style.display="block";
+    
+            }
+            else
+            {
+                box1.style.display="none";
+            }
+        })
+    </script>
 </body>
 </html>
